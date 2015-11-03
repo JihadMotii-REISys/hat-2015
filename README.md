@@ -27,6 +27,8 @@ $ vagrant ssh
 $ cd /var/www/hat-2015
 </pre>
 
+Note: Make sure you're using develop branch for development purpose.
+
 ## Update Environment:
 
 If you want to update your environment with our latest builds, simply browse to your path where you cloned git project:
