@@ -34,5 +34,6 @@ Note: Make sure you're using develop branch for development purpose.
 If you want to update your environment with our latest builds, simply browse to your path where you cloned git project:
 
 <pre>
+$ cd conf/vagrant
 $ vagrant provision --provision-with shell
 </pre>
