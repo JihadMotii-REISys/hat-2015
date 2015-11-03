@@ -17,7 +17,7 @@ You can specify develop branch before cloning project from git by:
 $ git clone -b develop https://github.com/JihadMotii-REISys/hat-2015.git
 </pre>
 
-Or you can switch it after being cloned as mentioned in Install Environment section.
+Or you can switch it to "develop" branch after being cloned as mentioned in Install Environment section.
 
 After the VM is up and running, these are the following command to use for vagrant to start, shutdown, delete your current VM:
 
