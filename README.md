@@ -7,9 +7,17 @@ $ vagrant up
 </pre>
 
 
-Note: the IP address allocated to this new VM Box is 192.168.56.108 and if you have used this IP Address, you can change it in `puphpet/config.yaml`
+Note: the IP address allocated to this new VM Box is 192.168.56.105 and if you have used this IP Address, you can change it in `conf/vagrant/puphpet/config.yaml`
 
 ## Starting dev :
+
+You can specify develop branch before cloning project from git by:
+
+<pre>
+$ git clone -b develop https://github.com/JihadMotii-REISys/hat-2015.git
+</pre>
+
+Or you can switch it to "develop" branch after being cloned as mentioned in Install Environment section.
 
 After the VM is up and running, these are the following command to use for vagrant to start, shutdown, delete your current VM:
 
@@ -27,12 +35,13 @@ $ vagrant ssh
 $ cd /var/www/hat-2015
 </pre>
 
-Note: Make sure you're using develop branch for development purpose.
+#### Note: Make sure you're using develop branch for development purpose.
 
 ## Update Environment:
 
 If you want to update your environment with our latest builds, simply browse to your path where you cloned git project:
 
 <pre>
+$ cd conf/vagrant
 $ vagrant provision --provision-with shell
 </pre>
