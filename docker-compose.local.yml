@@ -1,0 +1,5 @@
+frontend:
+    extends:
+        file: docker-compose-common.yml
+        service: frontend
+    
