@@ -40,7 +40,7 @@ sudo npm install -g generator-webapp
 echo "Install Angular Generator ..."
 sudo npm install -g generator-angular
 
-if [ ! -f ~/.git-prompt.sh ] 
+if [ ! -f /home/vagrant/.git-prompt.sh ] 
 then
 
     echo "Fix dependencies with github and look&feel terminal ..."
@@ -49,9 +49,11 @@ then
     wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
     echo "Set up file in user home.."
-    mv git-prompt.sh ~/.git-prompt.sh
+    mv git-prompt.sh /home/vagrant/.git-prompt.sh
+    cp /home/vagrant/.git-prompt.sh ~/.git-prompt.sh
 
     echo "Update user bash profile..."
+    echo "source /home/vagrant/.git-prompt.sh" >> /home/vagrant/.bash_profile
     echo "source ~/.git-prompt.sh" >> ~/.bash_profile
 
 fi
