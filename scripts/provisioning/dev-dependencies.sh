@@ -10,15 +10,15 @@ echo "Install Develpment Tools ..."
 sudo yum -y groupinstall "Development tools"
 
 echo "Install NodeJS Latest stable ..."
-cd /opt \ 
-    && sudo wget http://nodejs.org/dist/v4.2.1/node-v4.2.1.tar.gz \ 
-    && sudo tar zxf node-v4.2.1.tar.gz \
-    && cd node-v4.2.1 \
-    && sudo ./configure --prefix=/usr/local \
-    && sudo make \
-    && sudo make install \
-    && node -v \
-    && npm -v
+cd opt
+sudo wget http://nodejs.org/dist/v4.2.1/node-v4.2.1.tar.gz 
+sudo tar zxf node-v4.2.1.tar.gz 
+cd node-v4.2.1 
+sudo ./configure --prefix=/usr
+sudo make 
+sudo make install 
+node -v 
+npm -v
 
 echo "Install Yoeman..."
 sudo npm install -g yo
