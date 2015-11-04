@@ -1,44 +1,44 @@
 #!/bin/bash
 
 echo "Updating Centos ..."
-sudo yum -y update
+yum -y update
 
 echo "Install some dependencies..."
-sudo yum -y install yum-utils bzip2 bzip2-devel wget curl tar gcc gcc-c++
+yum -y install yum-utils bzip2 bzip2-devel wget curl tar gcc gcc-c++
 
-sudo yum -y install epel-release
+yum -y install epel-release
 
 echo "Install Develpment Tools ..."
-sudo yum -y groupinstall "Development tools"
+yum -y groupinstall "Development tools"
 
 echo "Install NodeJS Latest stable ..."
 cd opt
-sudo wget http://nodejs.org/dist/v4.2.1/node-v4.2.1.tar.gz 
-sudo tar zxf node-v4.2.1.tar.gz 
+wget http://nodejs.org/dist/v4.2.1/node-v4.2.1.tar.gz 
+tar zxf node-v4.2.1.tar.gz 
 cd node-v4.2.1 
-sudo ./configure --prefix=/usr
-sudo make 
-sudo make install 
+./configure --prefix=/usr
+make 
+make install 
 node -v 
 npm -v
 
 echo "Install Yoeman..."
-sudo npm install -g yo
+npm install -g yo
 
 echo "Install Bower..."
-sudo npm install -g bower
+npm install -g bower
 
 echo "Install Grunt ..."
-sudo npm install -g grunt-cli
+npm install -g grunt-cli
 
 echo "Install Gulp ..."
-sudo npm install -g gulp
+npm install -g gulp
 
 echo "Install Generator web ..."
-sudo npm install -g generator-webapp
+npm install -g generator-webapp
 
 echo "Install Angular Generator ..."
-sudo npm install -g generator-angular
+npm install -g generator-angular
 
 if [ ! -f /home/vagrant/.git-prompt.sh ] 
 then
@@ -59,4 +59,19 @@ then
 fi
 
 echo "Install VIM & nano ..."
-sudo yum -y install vim nano
+yum -y install vim nano
+
+if ! type "docker" > /dev/null
+then
+    echo "Install docker ..."
+    curl -sSL https://get.docker.com/ | sh
+
+    echo "Start the docker daemon at boot ..."
+    chkconfig docker on
+fi
+
+if ! type "docker-compose" > /dev/null
+then
+    echo "Install docker compose ..."
+    sh /var/www/hat-2015/scripts/docker/install-compose.sh
+fi
