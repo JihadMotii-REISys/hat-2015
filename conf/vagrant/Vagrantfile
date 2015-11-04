@@ -19,5 +19,5 @@ Vagrant.require_version '>= 1.6.0'
 eval File.read("#{dir}/puphpet/vagrant/Vagrantfile-#{data['target']}")
 
 Vagrant.configure("2") do |config|
-  config.vm.provision "shell", path: "#{dir}/../../scripts/provisioning/dev-dependencies.sh"
+  config.vm.provision "shell", path: "#{dir}/../../scripts/vagrant/dev-dependencies.sh"
 end
