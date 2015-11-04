@@ -1,9 +1,20 @@
 ## Install Environment:
+####Requirements
+You need to have vagrant installed https://www.vagrantup.com/downloads.html, then install these following tools:
+
+<pre>
+$ vagrant plugin install vagrant-vbguest
+</pre>
+
+#### Install project
+Run command lines in order to set up the project in your machine :
 
 <pre>
 $ git clone https://github.com/JihadMotii-REISys/hat-2015.git
 $ cd hat-2015/conf/vagrant
 $ vagrant up
+$ vagrant provision --provision-with shell
+$ vagrant ssh
 </pre>
 
 
