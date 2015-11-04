@@ -45,3 +45,4 @@ If you want to update your environment with our latest builds, simply browse to 
 $ cd conf/vagrant
 $ vagrant provision --provision-with shell
 </pre>
+
