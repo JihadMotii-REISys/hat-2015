@@ -4,7 +4,7 @@ echo "Updating Centos ..."
 yum -y update
 
 echo "Install some dependencies..."
-yum -y install yum-utils bzip2 bzip2-devel wget curl tar gcc gcc-c++
+yum -y install yum-utils bzip2 bzip2-devel wget curl tar gcc gcc-c++ fontconfig
 
 yum -y install epel-release
 
@@ -40,9 +40,20 @@ npm install -g generator-webapp
 echo "Install Angular Generator ..."
 npm install -g generator-angular
 
+echo "Install Karma unit testing framework Frontend..."
+npm install -g karma
+
+echo "Install SailsJS ..."
+npm install -g sails
+
+echo "Install PM2 for launching SailsJS App in prod ..."
+npm install pm2 -g --unsafe-perm
+
+echo "Install Mocha unit testing framework Backend..."
+npm install -g mocha
+
 if [ ! -f /home/vagrant/.git-prompt.sh ] 
 then
-
     echo "Fix dependencies with github and look&feel terminal ..."
 
     cd /tmp
@@ -55,7 +66,6 @@ then
     echo "Update user bash profile..."
     echo "source /home/vagrant/.git-prompt.sh" >> /home/vagrant/.bash_profile
     echo "source ~/.git-prompt.sh" >> ~/.bash_profile
-
 fi
 
 echo "Install VIM & nano ..."
@@ -75,3 +85,13 @@ then
     echo "Install docker compose ..."
     sh /var/www/hat-2015/scripts/docker/install-compose.sh
 fi
+
+
+echo "Install all dev dependencies -= FRONTEND =-"
+cd /var/www/hat-2015/src/frontend
+npm install
+bower install
+
+echo "Install all dev dependencies -= BACKEND =-"
+cd /var/www/hat-2015/src/backend/app
+npm install
