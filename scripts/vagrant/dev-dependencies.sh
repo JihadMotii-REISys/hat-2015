@@ -89,9 +89,9 @@ fi
 
 echo "Install all dev dependencies -= FRONTEND =-"
 cd /var/www/hat-2015/src/frontend
-npm install
-bower install
+su vagrant -c "npm install"
+su vagrant -c "bower install"
 
 echo "Install all dev dependencies -= BACKEND =-"
 cd /var/www/hat-2015/src/backend/app
-npm install
+su vagrant -c "npm install"
