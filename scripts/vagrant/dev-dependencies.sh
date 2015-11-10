@@ -52,6 +52,9 @@ npm install pm2 -g --unsafe-perm
 echo "Install Mocha unit testing framework Backend..."
 npm install -g mocha
 
+echo "Install HTTP Server to run frontend app (prod mode)..."
+npm install http-server -g
+
 if [ ! -f /home/vagrant/.git-prompt.sh ] 
 then
     echo "Fix dependencies with github and look&feel terminal ..."
@@ -103,3 +106,7 @@ su vagrant -c "bower install"
 echo "Install all dev dependencies -= BACKEND =-"
 cd /var/www/hat-2015/src/backend/app
 su vagrant -c "npm install"
+
+#echo "Opening port for dev ..."
+#/sbin/iptables -I INPUT -p tcp -m tcp --dport 9000 -j ACCEPT
+#/sbin/iptables -I INPUT -p tcp -m tcp --dport 35729 -j ACCEPT
