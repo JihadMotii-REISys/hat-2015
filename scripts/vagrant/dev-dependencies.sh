@@ -80,6 +80,14 @@ then
     chkconfig docker on
 fi
 
+if [ ! -f /etc/sysconfig/docker ] 
+then
+    echo "Setting docker to use DOCKER_OPTS within daemon (start)..."
+    echo "OPTIONS='--exec-opt native.cgroupdriver=cgroupfs'" > /etc/sysconfig/docker
+    echo "DOCKER_STORAGE_OPTIONS=''" > /etc/sysconfig/docker-storage
+    echo "DOCKER_NETWORK_OPTIONS=''" > /etc/sysconfig/docker-network
+fi
+
 if ! type "docker-compose" > /dev/null
 then
     echo "Install docker compose ..."

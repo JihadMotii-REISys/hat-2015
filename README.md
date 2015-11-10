@@ -48,6 +48,35 @@ $ cd /var/www/hat-2015
 
 #### Note: Make sure you're using develop branch for development purpose.
 
+#### Using Docker in Dev environment:
+In order to use docker and build/run images/container in dev, you must change one file as mentioned: http://docs.docker.com/engine/articles/systemd/#custom-docker-daemon-options
+
+<pre>
+$ sudo vim /lib/systemd/system/docker.service
+
+- Replace this line:
+
+ExecStart=/usr/bin/docker daemon -H fd://
+
+- By:
+
+EnvironmentFile=-/etc/sysconfig/docker
+EnvironmentFile=-/etc/sysconfig/docker-storage
+EnvironmentFile=-/etc/sysconfig/docker-network
+ExecStart=
+ExecStart=/usr/bin/docker daemon -H fd:// $OPTIONS \
+          $DOCKER_STORAGE_OPTIONS \
+          $DOCKER_NETWORK_OPTIONS \
+          $BLOCK_REGISTRY \
+          $INSECURE_REGISTRY
+
+- Save file and exit
+
+$ sudo systemctl daemon-reload
+$ sudo service docker restart
+
+</pre>
+
 ## Update Environment:
 
 If you want to update your environment with our latest builds, simply browse to your path where you cloned git project:
