@@ -28,3 +28,4 @@ RUN cd /opt \
 
 #Install Grunt
 RUN npm install -g grunt-cli
+RUN npm install grunt --save-dev

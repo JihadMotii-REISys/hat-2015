@@ -108,8 +108,8 @@ cd /var/www/hat-2015/src/backend/app
 su vagrant -c "npm install"
 
 #echo "Opening port for dev ..."
-#/sbin/iptables -I INPUT -p tcp -m tcp --dport 9000 -j ACCEPT
-#/sbin/iptables -I INPUT -p tcp -m tcp --dport 35729 -j ACCEPT
+/sbin/iptables -I INPUT -p tcp -m tcp --dport 9000 -j ACCEPT
+/sbin/iptables -I INPUT -p tcp -m tcp --dport 35729 -j ACCEPT
 
 echo "Set up git: Remove file modes..."
 cd /var/www/hat-2015
