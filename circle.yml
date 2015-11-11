@@ -10,7 +10,7 @@ dependencies:
         - ./src/frontend/bower_components
     override:
         #RUN TEST IN CIRCLECI WITHIN CONTAINER -> As of now, PhantomJS Hangs in CircleCI
-        - sudo pip install --upgrade docker-compose==1.5.0
+        #- sudo pip install --upgrade docker-compose==1.5.0
         - npm install -g bower
         - npm install -g karma
         - npm install -g grunt-cli
@@ -21,7 +21,7 @@ test:
         #RUN TEST IN CIRCLECI WITHOUT CONTAINER
         - cd ./src/frontend && grunt test
         #RUN TEST IN CIRCLECI WITHIN CONTAINER -> As of now, PhantomJS Hangs in CircleCI
-        - sh ./scripts/docker/run-tests.sh
+        #- sh ./scripts/docker/run-tests.sh
 
 #deployment:
 #  hub:
