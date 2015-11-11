@@ -13,7 +13,7 @@ Run command lines in order to set up the project in your machine :
 $ git clone -b develop https://github.com/JihadMotii-REISys/hat-2015.git
 $ cd hat-2015/conf/vagrant
 $ vagrant up
-$ vagrant provision --provision-with shell   #sync your local environment with our updated dev dependencies
+$ vagrant provision --provision-with shell   #sync your local environment with updated dev dependencies
 $ vagrant ssh
 $ cd /var/www/hat-2015
 </pre>
