@@ -1,4 +1,9 @@
 machine:
+    node:
+        version: v4.2.1
+    npm:
+        version: v2.14.7
+
     services:
         - docker
 
