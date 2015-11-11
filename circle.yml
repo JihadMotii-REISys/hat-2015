@@ -3,15 +3,22 @@ machine:
         - docker
 
 dependencies:
+    cache_directories:
+        - ./src/frontend/node_modules
+        - ./src/frontend/bower_components
     override:
         - sudo pip install --upgrade docker-compose==1.5.0
-        - cd ./src/frontend && npm install && bower install
+        ###- cd ./src/frontend && npm install && bower install
 
 test:
     override:
         - pwd
         - ls -lsa
-        - sh ./scripts/docker/run-tests.sh
+        - node -v
+        - npm -v
+        - bower -v
+        - karma --version
+        ###- sh ./scripts/docker/run-tests.sh
 #        - docker-compose run -d --no-deps frontend
 #        - cd app; mocha
 
