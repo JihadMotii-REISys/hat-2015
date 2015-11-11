@@ -5,7 +5,9 @@ machine:
 dependencies:
     override:
         - sudo pip install --upgrade docker-compose==1.5.0
-        - npm install ./src/frontend && bower install ./src/frontend
+        - cd ./src/frontend
+        - npm install  && bower install
+        - cd ../../
 
 test:
     override:
