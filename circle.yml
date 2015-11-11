@@ -10,6 +10,7 @@ test:
     override:
         - pwd
         - ls -lsa
+        - sh ./scripts/docker/run-tests.sh
 #        - docker-compose run -d --no-deps frontend
 #        - cd app; mocha
 
