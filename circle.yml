@@ -11,7 +11,8 @@ dependencies:
     override:
         - sudo pip install --upgrade docker-compose==1.5.0
         - npm install -g bower
-        - cd ./src/frontend && npm install && bower install && npm install karma
+        - npm install -g karma
+        - cd ./src/frontend && npm install && bower install
 
 test:
     override:
