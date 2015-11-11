@@ -25,6 +25,7 @@ test:
 
 deployment:
     hub:
+        #Deploy to tutum only if CircleCi got kicked from Master branch from Github
         branch: master
         commands:
             - sh ./scripts/docker/build.sh
