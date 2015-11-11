@@ -43,6 +43,9 @@ module.exports = function(config) {
     // list of files / patterns to exclude
     exclude: [
     ],
+    
+    // test results reporter to use
+    reporters: ['progress'],
 
     // web server port
     port: 9876,
@@ -68,7 +71,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true,
+    singleRun: false,
 
     colors: true,
     
