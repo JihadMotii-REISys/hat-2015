@@ -19,7 +19,7 @@ test:
         - npm -v
         - bower -v
         - karma --version
-        - /var/www/hat-2015/src/frontend/node_modules/phantomjs/lib/phantom/bin/phantomjs -v
+        - ./src/frontend/node_modules/phantomjs/lib/phantom/bin/phantomjs -v
         - phantomjs -v
         #- sh ./scripts/docker/run-tests.sh
 #        - docker-compose run -d --no-deps frontend
