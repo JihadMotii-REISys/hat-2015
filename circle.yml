@@ -17,15 +17,10 @@ dependencies:
 
 test:
     override:
-        - pwd
-        - ls -lsa
-        - node -v
-        - npm -v
-        - bower -v
-        - cd ./src/frontend && grunt karma:unit --verbose --debug
-        - sh ./scripts/docker/run-tests.sh
-#        - docker-compose run -d --no-deps frontend
-#        - cd app; mocha
+        #RUN TEST IN CIRCLECI WITHOUT CONTAINER
+        - cd ./src/frontend && grunt test
+        #RUN TEST IN CIRCLECI WITHIN CONTAINER -> As of now, PhantomJS Hangs in CircleCI
+        #- sh ./scripts/docker/run-tests.sh
 
 #deployment:
 #  hub:
