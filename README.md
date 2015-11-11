@@ -6,29 +6,17 @@ You need to have vagrant installed https://www.vagrantup.com/downloads.html, the
 $ vagrant plugin install vagrant-vbguest
 </pre>
 
-#### Install project
+#### Install project locally
 Run command lines in order to set up the project in your machine :
 
 <pre>
-$ git clone https://github.com/JihadMotii-REISys/hat-2015.git
+$ git clone -b develop https://github.com/JihadMotii-REISys/hat-2015.git
 $ cd hat-2015/conf/vagrant
 $ vagrant up
-$ vagrant provision --provision-with shell
+$ vagrant provision --provision-with shell   #sync your local environment with our updated dev dependencies
 $ vagrant ssh
+$ cd /var/www/hat-2015
 </pre>
-
-
-Note: the IP address allocated to this new VM Box is 192.168.56.105 and if you have used this IP Address, you can change it in `conf/vagrant/puphpet/config.yaml`
-
-## Starting dev :
-
-You can specify develop branch before cloning project from git by:
-
-<pre>
-$ git clone -b develop https://github.com/JihadMotii-REISys/hat-2015.git
-</pre>
-
-Or you can switch it to "develop" branch after being cloned as mentioned in Install Environment section.
 
 After the VM is up and running, these are the following command to use for vagrant to start, shutdown, delete your current VM:
 
@@ -39,14 +27,18 @@ $ vagrant destroy   # remove the VM
 $ vagrant ssh       # access to your VM (SSH)
 </pre>
 
-To browse the project on the guest machine:
+######Note: the IP address allocated to this new VM Box is 192.168.56.105 and if you have used this IP Address, you can change it in `conf/vagrant/puphpet/config.yaml`
+
+#####Run the application without docker
+
+Inside your vagrant VM, run the following command
 
 <pre>
-$ vagrant ssh
-$ cd /var/www/hat-2015
+$ cd /var/www/hat-2015/src/frontend
+$ grunt serve
 </pre>
 
-#### Note: Make sure you're using develop branch for development purpose.
+Browse URL: http://192.168.56.105:9000/
 
 #### Using Docker in Dev environment:
 In order to use docker and build/run images/container in dev, you must change one file as mentioned: http://docs.docker.com/engine/articles/systemd/#custom-docker-daemon-options
@@ -77,12 +69,23 @@ $ sudo service docker restart
 
 </pre>
 
-## Update Environment:
 
-If you want to update your environment with our latest builds, simply browse to your path where you cloned git project:
+#####Run the application with docker
+
+Inside your vagrant VM, run the following commands
 
 <pre>
-$ cd conf/vagrant
-$ vagrant provision --provision-with shell
+$ sudo su
+$ cd /var/www/hat-2015
+$ docker-compose -f docker-compose.local.yml up -d
 </pre>
 
+Browse URL: http://192.168.56.105/
+
+To stop and remove containers, run the following commands:
+<pre>
+$ sudo su
+$ cd /var/www/hat-2015
+$ docker-compose -f docker-compose.local.yml stop
+$ docker-compose -f docker-compose.local.yml rm -f
+</pre>
