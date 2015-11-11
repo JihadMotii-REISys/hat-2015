@@ -45,7 +45,7 @@ module.exports = function(config) {
     ],
 
     // web server port
-    port: 8080,
+    port: 9876,
     //hostname:'127.0.0.1',
 
     // Start these browsers, currently available:
