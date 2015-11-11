@@ -1,28 +1,10 @@
 frontend:
     #this will build it from src/frontend/Dockerfile
     build: ./src/frontend
+    ports:
+        - "80:9000"
     volumes:
         - "./src/frontend:/var/www/app"
-    ports:
-        - "80:3000"
-    #links:
-    #    - redis
-    #image: node:latest
-    #working_dir: /app
-    #command:  adduser docker && chown -R docker:docker /var/www/app
-        #- node app.js
-    ###keep container running
-    stdin_open: true
-
-#backend:
-     #this will build it from src/backend/Dockerfile
-#    build: ./src/backend
-#    volumes:
-#        - "./src/backend:/var/www/app"
-#    ports:
-#      - "80:3000"
-    #links:
-    # - redis
-    
-    ###keep container running
-    stdin_open: true
+    working_dir: "/var/www/app"
+    expose:
+        - 9000
