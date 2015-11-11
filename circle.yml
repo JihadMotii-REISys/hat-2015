@@ -24,7 +24,7 @@ test:
         #- sh ./scripts/docker/run-tests.sh
 
 deployment:
-  hub:
-    branch: master
-    commands:
-      - sh ./scripts/docker/build.sh
+    hub:
+        branch: master
+        commands:
+            - sh ./scripts/docker/build.sh
