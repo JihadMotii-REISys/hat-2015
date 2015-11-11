@@ -21,6 +21,7 @@ test:
         - node -v
         - npm -v
         - bower -v
+        - cd ./src/frontend && grunt karma:unit --verbose --debug
         - sh ./scripts/docker/run-tests.sh
 #        - docker-compose run -d --no-deps frontend
 #        - cd app; mocha
