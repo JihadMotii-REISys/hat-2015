@@ -6,4 +6,4 @@ frontend:
         - "8080:9001"
     expose:
         - 9001
-    command: echo "yes" ; npm install ; bower install ; grunt test
+    command: grunt test
