@@ -8,7 +8,7 @@ dependencies:
         - ./src/frontend/bower_components
     override:
         - sudo pip install --upgrade docker-compose==1.5.0
-        - apt-get remove --purge phantomjs
+        - sudo apt-get remove --purge phantomjs
         - cd ./src/frontend && npm install && bower install
         - npm install karma
 
