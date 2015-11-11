@@ -305,9 +305,6 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images'
         }]
       }
-//      options: {
-//        cache: false
-//      }
     },
 
     svgmin: {
