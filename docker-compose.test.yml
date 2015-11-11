@@ -4,8 +4,8 @@ frontend:
         service: frontend
     ports:
         - "9001:9001"
-        - "80:80"
+        - "8989:8989"
     expose:
         - 9001
-        - 80
+        - 8989
     command: grunt test
