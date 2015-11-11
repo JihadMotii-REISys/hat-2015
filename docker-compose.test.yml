@@ -3,7 +3,8 @@ frontend:
         file: docker-compose-common.yml
         service: frontend
     ports:
-        - "8080:9001"
+        - "8800:9001"
     expose:
         - 9001
+        - 8080
     command: grunt test

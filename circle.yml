@@ -8,9 +8,9 @@ dependencies:
         - ./src/frontend/bower_components
     override:
         - sudo pip install --upgrade docker-compose==1.5.0
+        - apt-get remove --purge phantomjs
         - cd ./src/frontend && npm install && bower install
-        - npm install -g karma
-        - sudo apt-get install libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
+        - npm install karma
 
 test:
     override:
