@@ -8,6 +8,7 @@ dependencies:
     cache_directories:
         - ./src/frontend/node_modules
         - ./src/frontend/bower_components
+        - /home/ubuntu/nvm/versions/node/v4.2.1/lib/node_modules
     override:
         #RUN TEST IN CIRCLECI WITHIN CONTAINER -> As of now, PhantomJS Hangs in CircleCI
         #- sudo pip install --upgrade docker-compose==1.5.0
