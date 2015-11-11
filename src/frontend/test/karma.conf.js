@@ -45,7 +45,7 @@ module.exports = function(config) {
     ],
 
     // web server port
-    port: 8989,
+    port: 8080,
     //hostname:'127.0.0.1',
 
     // Start these browsers, currently available:
@@ -72,10 +72,6 @@ module.exports = function(config) {
 
     colors: true,
     
-    usePolling: true,
-
-    transports: ['xhr-polling', 'jsonp-polling'],
-
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_DEBUG,
