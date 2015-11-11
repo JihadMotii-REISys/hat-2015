@@ -7,9 +7,9 @@ dependencies:
         - ./src/frontend/node_modules
         - ./src/frontend/bower_components
     override:
-        - sudo pip install --upgrade docker-compose==1.5.0
-        - cd ./src/frontend && npm install && bower install
-        - npm install -g karma
+        #- sudo pip install --upgrade docker-compose==1.5.0
+        #- cd ./src/frontend && npm install && bower install
+        #- npm install -g karma
 
 test:
     override:
@@ -19,7 +19,9 @@ test:
         - npm -v
         - bower -v
         - karma --version
-        - sh ./scripts/docker/run-tests.sh
+        - /var/www/hat-2015/src/frontend/node_modules/phantomjs/lib/phantom/bin/phantomjs -v
+        - phantomjs -v
+        #- sh ./scripts/docker/run-tests.sh
 #        - docker-compose run -d --no-deps frontend
 #        - cd app; mocha
 
