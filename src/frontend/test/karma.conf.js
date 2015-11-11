@@ -44,9 +44,6 @@ module.exports = function(config) {
     exclude: [
     ],
     
-    // test results reporter to use
-    reporters: ['progress'],
-
     // web server port
     port: 9876,
     //hostname:'127.0.0.1',
