@@ -10,7 +10,7 @@ engines:
   csslint:
     enabled: false
   requiresafe:
-    enabled: true
+    enabled: false
 languages:
   JavaScript: true
 #ratings:
