@@ -1,3 +1,7 @@
+[![Circle CI](https://circleci.com/gh/JihadMotii-REISys/hat-2015.svg?style=svg)](https://circleci.com/gh/JihadMotii-REISys/hat-2015)
+
+[![Code Climate](https://codeclimate.com/repos/56441dd76956800ccd009c20/badges/1870a9fac94180b587a4/gpa.svg)](https://codeclimate.com/repos/56441dd76956800ccd009c20/feed)
+
 ## Install Environment:
 ####Requirements
 You need to have vagrant installed https://www.vagrantup.com/downloads.html, then install these following tools:
